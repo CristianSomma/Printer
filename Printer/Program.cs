@@ -81,13 +81,9 @@ namespace Printer
 
         static async Task PrintParallel(IEnumerable<Document> documents)
         {
-            List<Task<string>> documentsInProcess = new List<Task<string>>();
-
-            foreach(Document document in documents)
-            {
-                Task<string> messagePromise = PrintDocument(document);
-                documentsInProcess.Add(messagePromise);
-            }
+            List<Task<string>> documentsInProcess = documents
+                .Select(document => PrintDocument(document))
+                .ToList();
 
             while(documentsInProcess.Count > 0)
             {

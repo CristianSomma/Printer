@@ -12,8 +12,8 @@ using Printer.Models;
     solo thread.
 
 2). L’ordine di completamento coincide con l’ordine dei documenti?
-    L'ordine di completamento dipende in questo caso dal numero di pagine dei documenti, più pagine significa
-    più tempo richiesto per la stampa.
+    L'ordine di completamento dipende in caso di esecuzione parallela dal numero di pagine dei documenti, più pagine significa
+    più tempo richiesto per la stampa, in esecuzione sequenziale invece dipende dall'ordine di stampa del documento e non dalla sua dimensione.
 
 3). Cosa succede se un documento ha molte più pagine degli altri?
     La sua stampa richiederà molto più tempo, indipendentemente che venga stampato sequenzialmente o parallelamente.
